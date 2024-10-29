@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="File Upload">
+        <div class="slds-m-around_medium">
+            <lightning-input type="file" label="Choose Files" multiple onchange={handleFileSelection}></lightning-input>
+            <template if:true={selectedFiles.length}>
+                <div class="slds-m-top_medium">
+                    <h3>Selected Files:</h3>
+                    <div class="uploaded-files-container">
+                        <!-- File Previews -->
+                        <template for:each={selectedFiles} for:item="file" for:index="index">
+                            <div key={file.id} class="file-card">
+                                <div class="file-card-content">
+                                    <!-- Styled remove icon -->
+                                    <div class="remove-icon" onclick={removeFile} data-index={index}>
+                                        ✕
+                                    </div>
+                                    <template if:true={file.previewUrl}>
+                                        <!-- Clickable image with preview -->
+                                        <img src={file.previewUrl} alt="Preview" 
+                                            class="file-image"
+                                            onclick={handleImageClick}
+                                            data-index={index}/>
+                                    </template>
+                                    <div class="file-info">
+                                        <p class="file-name">{file.name}</p>
+                                        <p class="file-size">{file.size} bytes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <lightning-button label="Upload" onclick={uploadFiles} class="slds-m-top_medium"></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

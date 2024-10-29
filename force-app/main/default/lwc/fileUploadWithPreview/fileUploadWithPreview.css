@@ -1,0 +1,69 @@
+.uploaded-files-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.file-card {
+    position: relative;
+    border: 1px solid #d8dde6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 120px;
+    text-align: center;
+    background: #f3f3f3;
+    padding: 1rem 0.5rem;
+}
+
+.file-card-content {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.file-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.file-info {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.file-name {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-size {
+    color: #6b6b6b;
+}
+
+/* New styling for remove icon */
+.remove-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.remove-icon:hover {
+    background-color: #ff1a1a;
+}
